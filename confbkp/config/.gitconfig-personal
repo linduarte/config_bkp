@@ -1,0 +1,10 @@
+# gitconfig-personal
+
+[user]
+        name  = Charles Duarte
+	email = cllduarte@icloud.com
+	signingkey = 297CBD967AE97356
+[commit]
+    gpgsign = true  
+[meta]
+	isLocalConfig = true

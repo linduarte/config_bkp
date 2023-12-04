@@ -1,0 +1,74 @@
+[user]
+	name = Charles Duarte
+    	email = cllduarte@icloud.com
+
+
+[includeIf "gitdir:/c/users/clldu/OneDrive/my_repos/work"]	
+   path = ~/.gitconfig-work
+[includeIf "gitdir:/C/users/clldu/Onedrive/my_repos/personal"]
+   path = ~/.gitconfig-personal
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+
+
+[alias]
+  co = checkout
+  ci = commit
+  cm = commit -m
+  st = status
+  stb =status -sb 
+  br = branch
+
+[core]
+	editor = \"C:\\Users\\clldu\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	autocrlf = true
+	safecrlf = false
+	sshcommand = ssh -i /c/users/clldu/onedrive/documentos/ssh_keys/.ssh/id_ed25519 -o IdentitiesOnly=yes
+[color]
+	ui = true
+
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = red
+
+[init]
+	defaultBranch = main
+[gpg]
+	program = gpg
+
+[commit]
+	gpgsign = true
+[credential]
+	helper = manager
+[difftool "sourcetree"]
+	cmd = "'' "
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[advice]
+	detachedHead = false
+
+[alias]
+
+    hist = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+
+[fetch]
+	prune = true
+
